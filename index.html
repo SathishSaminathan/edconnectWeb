@@ -1,0 +1,713 @@
+<html lang="en">
+  <head>
+    <link rel="dns-prefetch preconnect" href="https://sso.sbx.edenredcdn.com" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edenred Connect</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://sso.sbx.edenredcdn.com/favicon-16x16.png?v=nva0WTn64DoK-WW4DGQsUdxb-guh0xbZUR-kvZS5UGk"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://sso.sbx.edenredcdn.com/favicon-32x32.png?v=M5PUx1dlTHOwBx-vQpCzMzsbpd8EXuOLFkcBXM1ofLk"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://sso.sbx.edenredcdn.com/favicon.ico?v=S6HHdEmRwaNH8r85FvsVOMqpCU2JNJFkZc4lDOROTsU"
+    />
+    <link rel="stylesheet" href="eae-c3portal.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://sso.sbx.edenredcdn.com/apple-touch-icon.png?v=QWPp3eUlbf4aShBOfMTgxo9DJP4yBYJ9lVuoYfVs868"
+    />
+    <link
+      rel="stylesheet"
+      id="custom-styles"
+      href="https://sso.sbx.edenredcdn.com/assets/core/styles/main.min.css?v=Z31ggGBrplZJlDhqKYykJYYZh1KOQZDYF3WwHSQMWK0"
+    />
+    <link rel="dns-prefetch preconnect" href="https://www.gstatic.com" />
+    <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com" />
+
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.gstatic.com/recaptcha/releases/UFwvoDBMjc8LiYc1DKXiAomK/recaptcha__en_gb.js"
+      crossorigin="anonymous"
+      integrity="sha384-txa9bTabWt56ejmvoOGJxQ2LqJea0VHcCS0wQ1L6Ofo0ru8MKiEXYgi3dqiopUoL"
+    ></script>
+    <script>
+      !(function (T, l, y) {
+        var S = T.location,
+          u = "script",
+          k = "instrumentationKey",
+          D = "ingestionendpoint",
+          C = "disableExceptionTracking",
+          E = "ai.device.",
+          I = "toLowerCase",
+          b = "crossOrigin",
+          w = "POST",
+          e = "appInsightsSDK",
+          t = y.name || "appInsights";
+        (y.name || T[e]) && (T[e] = t);
+        var n =
+          T[t] ||
+          (function (d) {
+            var g = !1,
+              f = !1,
+              m = { initialize: !0, queue: [], sv: "4", version: 2, config: d };
+            function v(e, t) {
+              var n = {},
+                a = "Browser";
+              return (
+                (n[E + "id"] = a[I]()),
+                (n[E + "type"] = a),
+                (n["ai.operation.name"] = (S && S.pathname) || "_unknown_"),
+                (n["ai.internal.sdkVersion"] =
+                  "javascript:snippet_" + (m.sv || m.version)),
+                {
+                  time: (function () {
+                    var e = new Date();
+                    function t(e) {
+                      var t = "" + e;
+                      return 1 === t.length && (t = "0" + t), t;
+                    }
+                    return (
+                      e.getUTCFullYear() +
+                      "-" +
+                      t(1 + e.getUTCMonth()) +
+                      "-" +
+                      t(e.getUTCDate()) +
+                      "T" +
+                      t(e.getUTCHours()) +
+                      ":" +
+                      t(e.getUTCMinutes()) +
+                      ":" +
+                      t(e.getUTCSeconds()) +
+                      "." +
+                      ((e.getUTCMilliseconds() / 1e3).toFixed(3) + "").slice(
+                        2,
+                        5
+                      ) +
+                      "Z"
+                    );
+                  })(),
+                  iKey: e,
+                  name:
+                    "Microsoft.ApplicationInsights." +
+                    e.replace(/-/g, "") +
+                    "." +
+                    t,
+                  sampleRate: 100,
+                  tags: n,
+                  data: { baseData: { ver: 2 } },
+                }
+              );
+            }
+            var h = d.url || y.src;
+            if (h) {
+              function a(e) {
+                var t, n, a, i, r, o, s, c, p, l, u;
+                (g = !0),
+                  (m.queue = []),
+                  f ||
+                    ((f = !0),
+                    (t = h),
+                    (s = (function () {
+                      var e = {},
+                        t = d.connectionString;
+                      if (t)
+                        for (var n = t.split(";"), a = 0; a < n.length; a++) {
+                          var i = n[a].split("=");
+                          2 === i.length && (e[i[0][I]()] = i[1]);
+                        }
+                      if (!e[D]) {
+                        var r = e.endpointsuffix,
+                          o = r ? e.location : null;
+                        e[D] =
+                          "https://" +
+                          (o ? o + "." : "") +
+                          "dc." +
+                          (r || "services.visualstudio.com");
+                      }
+                      return e;
+                    })()),
+                    (c = s[k] || d[k] || ""),
+                    (p = s[D]),
+                    (l = p ? p + "/v2/track" : config.endpointUrl),
+                    (u = []).push(
+                      ((n =
+                        "SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)"),
+                      (a = t),
+                      (i = l),
+                      ((o = (r = v(c, "Exception")).data).baseType =
+                        "ExceptionData"),
+                      (o.baseData.exceptions = [
+                        {
+                          typeName: "SDKLoadFailed",
+                          message: n.replace(/\./g, "-"),
+                          hasFullStack: !1,
+                          stack:
+                            n +
+                            "\nSnippet failed to load [" +
+                            a +
+                            "] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: " +
+                            ((S && S.pathname) || "_unknown_") +
+                            "\nEndpoint: " +
+                            i,
+                          parsedStack: [],
+                        },
+                      ]),
+                      r)
+                    ),
+                    u.push(
+                      (function (e, t, n, a) {
+                        var i = v(c, "Message"),
+                          r = i.data;
+                        r.baseType = "MessageData";
+                        var o = r.baseData;
+                        return (
+                          (o.message =
+                            'AI (Internal): 99 message:"' +
+                            (
+                              "SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) (" +
+                              n +
+                              ")"
+                            ).replace(/\"/g, "") +
+                            '"'),
+                          (o.properties = { endpoint: a }),
+                          i
+                        );
+                      })(0, 0, t, l)
+                    ),
+                    (function (e, t) {
+                      if (JSON) {
+                        var n = T.fetch;
+                        if (n && !y.useXhr)
+                          n(t, {
+                            method: w,
+                            body: JSON.stringify(e),
+                            mode: "cors",
+                          });
+                        else if (XMLHttpRequest) {
+                          var a = new XMLHttpRequest();
+                          a.open(w, t),
+                            a.setRequestHeader(
+                              "Content-type",
+                              "application/json"
+                            ),
+                            a.send(JSON.stringify(e));
+                        }
+                      }
+                    })(u, l));
+              }
+              function i(e, t) {
+                f ||
+                  setTimeout(function () {
+                    (!t && m.core) || a();
+                  }, 500);
+              }
+              var e = (function () {
+                var n = l.createElement(u);
+                n.src = h;
+                var e = y[b];
+                return (
+                  (!e && "" !== e) || "undefined" == n[b] || (n[b] = e),
+                  (n.onload = i),
+                  (n.onerror = a),
+                  (n.onreadystatechange = function (e, t) {
+                    ("loaded" !== n.readyState &&
+                      "complete" !== n.readyState) ||
+                      i(0, t);
+                  }),
+                  n
+                );
+              })();
+              y.ld < 0
+                ? l.getElementsByTagName("head")[0].appendChild(e)
+                : setTimeout(function () {
+                    l.getElementsByTagName(u)[0].parentNode.appendChild(e);
+                  }, y.ld || 0);
+            }
+            try {
+              m.cookie = l.cookie;
+            } catch (p) {}
+            function t(e) {
+              for (; e.length; )
+                !(function (t) {
+                  m[t] = function () {
+                    var e = arguments;
+                    g ||
+                      m.queue.push(function () {
+                        m[t].apply(m, e);
+                      });
+                  };
+                })(e.pop());
+            }
+            var n = "track",
+              r = "TrackPage",
+              o = "TrackEvent";
+            t([
+              n + "Event",
+              n + "PageView",
+              n + "Exception",
+              n + "Trace",
+              n + "DependencyData",
+              n + "Metric",
+              n + "PageViewPerformance",
+              "start" + r,
+              "stop" + r,
+              "start" + o,
+              "stop" + o,
+              "addTelemetryInitializer",
+              "setAuthenticatedUserContext",
+              "clearAuthenticatedUserContext",
+              "flush",
+            ]),
+              (m.SeverityLevel = {
+                Verbose: 0,
+                Information: 1,
+                Warning: 2,
+                Error: 3,
+                Critical: 4,
+              });
+            var s =
+              (d.extensionConfig || {}).ApplicationInsightsAnalytics || {};
+            if (!0 !== d[C] && !0 !== s[C]) {
+              (method = "onerror"), t(["_" + method]);
+              var c = T[method];
+              (T[method] = function (e, t, n, a, i) {
+                var r = c && c(e, t, n, a, i);
+                return (
+                  !0 !== r &&
+                    m["_" + method]({
+                      message: e,
+                      url: t,
+                      lineNumber: n,
+                      columnNumber: a,
+                      error: i,
+                    }),
+                  r
+                );
+              }),
+                (d.autoExceptionInstrumented = !0);
+            }
+            return m;
+          })(y.cfg);
+        (T[t] = n).queue && 0 === n.queue.length && n.trackPageView({});
+      })(window, document, {
+        src: "https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",
+        cfg: {
+          instrumentationKey: "ff2f1542-5a66-43ed-b9a0-60e00a6bade0",
+        },
+      });
+    </script>
+
+    <script src="https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js"></script>
+  </head>
+  <body
+    data-new-gr-c-s-check-loaded="14.984.0"
+    data-gr-ext-installed=""
+    style="
+      background-image: url('file:///C:/Users/welcome/Downloads/LoginBackgroundImage.png');
+    "
+  >
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="brands">
+            <div class="logo">
+              <a class="navbar-brand" href="#" rel="noreferrer">
+                <img
+                  id="custom-logo"
+                  src="https://sso.sbx.edenredcdn.com/assets/core/images/logos/edenred.svg?v=we104uGGquP0z-0DZS4FfrgGBz7lRPURCLJ35xb2uMA"
+                  class="icon-banner"
+                  alt="logo-edenred"
+                />
+              </a>
+            </div>
+            <div class="head-title">Head.Title</div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      class="alert alert-dismissible fade alert-danger alert-recaptcha d-none"
+      role="alert"
+    >
+      <strong>Error</strong>
+      <ul>
+        <li>
+          Your browser appears to be blocking the loading of the scripts
+          required for the website to function.
+        </li>
+      </ul>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <main class="container">
+      <div class="login-page">
+        <div class="page-header">
+          <h1 class="page-title">Connect your MyEdenred account</h1>
+        </div>
+
+        <div class="page-body">
+          <div class="side-content"></div>
+          <div class="content">
+            <div class="card card_LoginForm">
+              <div class="card-header">
+                <h3 class="card-title">Login</h3>
+                <div class="card-subtitle">
+                  For your personal space, it's your e-mail address. For your
+                  customer/merchant web space, please use the username we
+                  provided you during your sign-up
+                </div>
+              </div>
+              <div class="card-body">
+                <form action="" method="post">
+                  <div class="form-group field-username">
+                    <label class="label-username" for="Username"
+                      >Email or username</label
+                    >
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <em class="icon-username"></em>
+                      </div>
+                      <input
+                        type="text"
+                        id="Username"
+                        name="Username"
+                        class="form-control"
+                        placeholder="Username"
+                        required=""
+                        autofocus="autofocus"
+                      />
+                      <div class="input-group-append">
+                        <em
+                          id="icon-info"
+                          class="icon-info"
+                          role="button"
+                          tabindex="1"
+                          data-toggle="popover"
+                          title="value_LocalLogin.Username.Popover.Title"
+                        >
+                        </em>
+                      </div>
+                      <div
+                        id="popover-username"
+                        class="popover"
+                        role="tooltip"
+                        style="display: none"
+                      >
+                        <div class="popover-username-body">
+                          <div class="popover-username-txt">
+                            value_LocalLogin.Username.Popover.Text
+                          </div>
+                          <div class="popover-username-img"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group field-password">
+                    <label class="label-password" for="Password"
+                      >Password</label
+                    >
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <em class="icon-password"></em>
+                      </div>
+                      <input
+                        type="password"
+                        id="Password"
+                        name="Password"
+                        class="form-control"
+                        placeholder="Password"
+                        autocomplete="off"
+                        required=""
+                      />
+                      <div class="input-group-append">
+                        <em id="icon-eye" class="icon-eye"></em>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group login-remember">
+                    <label for="RememberLogin">
+                      <input
+                        type="checkbox"
+                        id="RememberLogin"
+                        name="RememberLogin"
+                        value="true"
+                      />
+                      <strong>Remember me</strong>
+                    </label>
+                  </div>
+                  <div class="actions">
+                    <div class="additionalLinks">
+                      <div class="container">
+                        <ul class="list-unstyled"></ul>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div>
+                        <div
+                          class="grecaptcha-badge"
+                          data-style="bottomright"
+                          style="
+                            width: 256px;
+                            height: 60px;
+                            display: block;
+                            transition: right 0.3s ease 0s;
+                            position: fixed;
+                            bottom: 14px;
+                            right: -186px;
+                            box-shadow: gray 0px 0px 5px;
+                            border-radius: 2px;
+                            overflow: hidden;
+                          "
+                        >
+                          <div class="grecaptcha-logo">
+                            <iframe
+                              src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcJfbIZAAAAAB2LS1cORw3T6FUnVw3PL1Gw9ivH&amp;co=aHR0cHM6Ly9zc28uc2J4LmVkZW5yZWQuaW86NDQz&amp;hl=en-GB&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;size=invisible&amp;cb=71wyy75o0vzt"
+                              width="256"
+                              height="60"
+                              role="presentation"
+                              name="a-klbu14gm64ks"
+                              frameborder="0"
+                              scrolling="no"
+                              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
+                            ></iframe>
+                          </div>
+                          <div class="grecaptcha-error"></div>
+                          <textarea
+                            id="g-recaptcha-response"
+                            name="g-recaptcha-response"
+                            class="g-recaptcha-response"
+                            style="
+                              width: 250px;
+                              height: 40px;
+                              border: 1px solid rgb(193, 193, 193);
+                              margin: 10px 25px;
+                              padding: 0px;
+                              resize: none;
+                              display: none;
+                            "
+                          ></textarea>
+                        </div>
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn btn-primary g-recaptcha"
+                        name="button"
+                        id="login"
+                        data-sitekey="6LcJfbIZAAAAAB2LS1cORw3T6FUnVw3PL1Gw9ivH"
+                        data-callback="onSubmit"
+                      >
+                        Log in
+                      </button>
+                      <div>
+                        <div
+                          class="grecaptcha-badge"
+                          data-style="none"
+                          style="
+                            width: 256px;
+                            height: 60px;
+                            position: fixed;
+                            visibility: hidden;
+                          "
+                        >
+                          <div class="grecaptcha-logo">
+                            <iframe
+                              src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcJfbIZAAAAAB2LS1cORw3T6FUnVw3PL1Gw9ivH&amp;co=aHR0cHM6Ly9zc28uc2J4LmVkZW5yZWQuaW86NDQz&amp;hl=en-GB&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;size=invisible&amp;cb=p4bcsknd0vos"
+                              width="256"
+                              height="60"
+                              role="presentation"
+                              name="a-z9jtxzxh6k7r"
+                              frameborder="0"
+                              scrolling="no"
+                              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
+                            ></iframe>
+                          </div>
+                          <div class="grecaptcha-error"></div>
+                          <textarea
+                            id="g-recaptcha-response-1"
+                            name="g-recaptcha-response"
+                            class="g-recaptcha-response"
+                            style="
+                              width: 250px;
+                              height: 40px;
+                              border: 1px solid rgb(193, 193, 193);
+                              margin: 10px 25px;
+                              padding: 0px;
+                              resize: none;
+                              display: none;
+                            "
+                          ></textarea>
+                        </div>
+                        <iframe style="display: none"></iframe>
+                      </div>
+                      <button
+                        class="btn btn-default g-recaptcha"
+                        name="button"
+                        data-sitekey="6LcJfbIZAAAAAB2LS1cORw3T6FUnVw3PL1Gw9ivH"
+                        data-callback="onSubmit"
+                        style=""
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                  <input
+                    type="hidden"
+                    id="ReturnUrl"
+                    name="ReturnUrl"
+                    value="/connect/authorize/callback?client_id=f70b258baaf5479981acc0dfc1df1cad&amp;redirect_uri=https%3A%2F%2Fedenred.azurewebsites.net%2Fsignin-oidc&amp;response_type=code&amp;scope=openid%20email%20erae-mobile-api&amp;state=1d19ee3f6e5a43bfb23c411ca8df9d27&amp;code_challenge=qHCXimcEgYjvJvy1qRfQP5nMdnFzDrrTNcGpx4vS4mU&amp;code_challenge_method=S256&amp;acr_values=tenant%3Aae-ben&amp;response_mode=query"
+                  />
+                  <input
+                    name="__RequestVerificationToken"
+                    type="hidden"
+                    value="CfDJ8J9Lsat3q-hIocysWnRnopBQd0051Tyd9LoiJx4wDXU53Xyle-XHFEeV8Z_gNgwtPoombPQ1UojkeI_uELXWeqCPTaA2oKEHYy7Xw8jJ-Iy0I7z92_gqb2H45ObuUc-E4o5auz9w_CEa84s4ct6C2-s"
+                  />
+                </form>
+              </div>
+            </div>
+
+            <div class="card card_AdditionalLinks">
+              <div class="card-header">
+                <h3 class="card-title"></h3>
+                <div class="card-subtitle"></div>
+              </div>
+              <div class="card-body">
+                <div class="additionalLinks">
+                  <div class="container">
+                    <ul class="list-unstyled"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container"></div>
+    </footer>
+    <script
+      id="custom-scripts"
+      src="https://sso.sbx.edenredcdn.com/assets/core/scripts/main.min.js?v=3WKwzyI_gX2cQxfuR9jAFjog3MupkHyiR1SyNsLu-xs"
+    ></script>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://sso.sbx.edenredcdn.com/assets/core/scripts/recaptcha.min.js?v=2TD4lXjHh9GzEqL2UBtDHipEivgKkGtM2-IyK9hjlvs"></script>
+
+    <div
+      style="
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        top: -10000px;
+        left: 0px;
+        right: 0px;
+        transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s;
+        opacity: 0;
+      "
+    >
+      <div
+        style="
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          z-index: 2000000000;
+          background-color: rgb(255, 255, 255);
+          opacity: 0.5;
+        "
+      ></div>
+      <div
+        style="
+          margin: 0px auto;
+          top: 0px;
+          left: 0px;
+          right: 0px;
+          position: absolute;
+          border: 1px solid rgb(204, 204, 204);
+          z-index: 2000000000;
+          background-color: rgb(255, 255, 255);
+          overflow: hidden;
+        "
+      >
+        <iframe
+          title="recaptcha challenge"
+          src="https://www.google.com/recaptcha/api2/bframe?hl=en-GB&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;k=6LcJfbIZAAAAAB2LS1cORw3T6FUnVw3PL1Gw9ivH&amp;cb=qpk8ot90k5l1"
+          name="c-klbu14gm64ks"
+          frameborder="0"
+          scrolling="no"
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
+          style="width: 100%; height: 100%"
+        ></iframe>
+      </div>
+    </div>
+    <div
+      style="
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        top: -10000px;
+        left: 0px;
+        right: 0px;
+        transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s;
+        opacity: 0;
+      "
+    >
+      <div
+        style="
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          z-index: 2000000000;
+          background-color: rgb(255, 255, 255);
+          opacity: 0.5;
+        "
+      ></div>
+      <div
+        style="
+          margin: 0px auto;
+          top: 0px;
+          left: 0px;
+          right: 0px;
+          position: absolute;
+          border: 1px solid rgb(204, 204, 204);
+          z-index: 2000000000;
+          background-color: rgb(255, 255, 255);
+          overflow: hidden;
+        "
+      >
+        <iframe
+          title="recaptcha challenge"
+          src="https://www.google.com/recaptcha/api2/bframe?hl=en-GB&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;k=6LcJfbIZAAAAAB2LS1cORw3T6FUnVw3PL1Gw9ivH&amp;cb=6rl2sm7nrto0"
+          name="c-z9jtxzxh6k7r"
+          frameborder="0"
+          scrolling="no"
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
+          style="width: 100%; height: 100%"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>
